@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+@import 'tailwindcss';
+
+
+@theme {
+    --font-mona-sans: 'Mona Sans', sans-serif;
+    --border-color: #4B4D4F;
+
+    --bg-color-one: #101216;
+    --bg-color-two: #101216;
+
+    --blocks-color: #C5F8FE;
+    --text-color: #DDFFFA;
+
+    --banner-color-one: #153230;
+    --banner-color-two: #08090D;
+}
+
+@layer base {
+    body {
+        @apply bg-gradient-to-b from-[#101216] to-[#0F1014] text-white transition-all duration-300 font-mona-sans min-h-screen;
+    }
+
+    h1 {
+        @apply sm:text-2xl text-center mb-5 lg:text-2xl xl:text-4xl font-bold text-[#DDFFFA];
+    }
+
+    label {
+        @apply sm:text-xl xl:text-3xl font-semibold text-[#8bfdec];
+    }
+
+    button {
+        @apply cursor-pointer bg-[#C5F8FE] text-black rounded-[10px] max-w-full w-[100px] h-10 flex items-center justify-evenly duration-300 ease-in-out hover:shadow-[0px_0px_10px_3px_#67E8F9] hover:bg-[#89e5ef];
+    }
+
+    p {
+        @apply xl:text-left mb-3 sm:text-[10px] md:text-lg lg:text-xl tracking-wider sm:text-center;
+    }
+
+    textarea, input, pre {
+       @apply w-full mt-[20px] p-4 bg-transparent border border-[#2A2B35] rounded-lg text-white hover:ring-2 hover:ring-[#bdfdef] duration-300 ease-in-out;
+    }
+
+    textarea {
+        @apply resize-none
+    }
+
+    pre {
+        font-family: "Inter", sans-serif;
+    }
+
+}
+
+@layer components {
+    .Header {
+        @apply flex justify-between px-[10%] py-10;
+    }
+
+    .Banner {
+        @apply flex justify-around h-[300px] mx-[10%] mb-8 bg-gradient-to-b from-[#153230] to-[#08090D] rounded-3xl p-5 hover:ring-2 hover:ring-[#bdfdef] duration-300 ease-in-out;
+    }
+    
+    .generate-button {
+        @apply w-[316px] h-[40px] font-bold m-auto mb-[20px]
+    }
+
+    .Banner-highlight {
+        @apply xl:text-left text-[#8bfdec] sm:text-center;
+    }
+
+    .saved-tweets-display {
+        @apply border-2 border-[#484D4F] rounded-[20px] bg-gradient-to-b from-[#1A1C20] to-[#08090D] mt-5 text-left p-5 hover:ring-2 hover:ring-[#bdfdef] duration-300 ease-in-out;
+    }
+
+    .saved-tweets-block {
+        @apply p-5 bg-[#27282F] rounded-[20px] mb-[30px];
+    }
+
+    .saved-text {
+        @apply font-light text-[#afecfc] text-[14px]/snug font-sans 
+    }
+}
+
+
