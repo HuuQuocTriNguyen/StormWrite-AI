@@ -18,6 +18,7 @@ const StormWriteAI = () => {
   const [tone, setTone] = useState('');
   const [input, setInput] = useState('');
   const [displayTweets, setDisplayTweets] = useState(false);
+  const [expandedTweets, setExpandedTweets] = useState({});
 
   const latestTweet = storeTweet.length > 0 ? storeTweet[storeTweet.length - 1] : "";
   const outputRef = useRef(); // The center to connect screenshot button and the place to screenshot
@@ -56,7 +57,20 @@ const StormWriteAI = () => {
 
   const displaySavedTweets = () => {
     setDisplayTweets((prev) => !prev);
+    console.log();
   }
+
+  // Helper to get truncated text
+  const getTruncatedText = (text, id) => {
+    const words = text.split(' ');
+    if (words.length <= 8 || expandedTweets[id]) return text;
+    return words.slice(0, 8).join(' ') + '...';
+  };
+
+  // Handler for toggling read more/hide text
+  const handleToggleExpand = (id) => {
+    setExpandedTweets((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
 
   return (
     <main>
@@ -72,7 +86,7 @@ const StormWriteAI = () => {
           <h1 className='Banner-highlight'>⚡ Create Viral X Thread with AI-Powered Writing</h1>
           <p>Write your content in the first box, the tone of content in the second box, and click the button. The magic will do itself.</p>
         </div>
-        <img src="./copywriting.png" alt="copywriting" />  
+        <img src="./copywriting.png" alt="copywriting" className='copywriting-img' width={300} height={300} />  
       </div>
         
       <section className="px-[10%] items-center">
@@ -86,7 +100,7 @@ const StormWriteAI = () => {
             <input type="text" placeholder="e.g. funny, controversial, unique" value={tone} onChange={(e) => setTone(e.target.value)} />
           </div>
 
-          <div className='flex mb-[50px]'>
+          <div className='flex flex-col sm:flex-row gap-3 sm:gap-6 mb-[50px'>
             <button onClick={generateThread} className='generate-button'>
               {isLoading ? "Generating Content" : "Generate Content"}
             </button>
@@ -104,7 +118,17 @@ const StormWriteAI = () => {
                  <div key={tweet.$id} className='saved-tweets-block'>
                   <p className='saved-text text-amber-50'>ID: {tweet.id_number}</p>
                   <p className='saved-text text-amber-50'>{tweet.userInput} </p>
-                  <p className='saved-text'>{tweet.GeneratedTweets} </p>
+                  <p className='saved-text'>
+                    {getTruncatedText(tweet.GeneratedTweets, tweet.$id)}
+                    {tweet.GeneratedTweets.split(' ').length > 8 && (
+                      <>
+                        {' '}
+                        <span className="show-or-hide" onClick={() => handleToggleExpand(tweet.$id)}>
+                          {expandedTweets[tweet.$id] ? 'Hide text' : 'read more'}
+                        </span>
+                      </>
+                    )}
+                  </p>
                </div>
               ))}
             </div>

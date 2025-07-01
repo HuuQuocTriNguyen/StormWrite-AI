@@ -23,7 +23,7 @@
     }
 
     h1 {
-        @apply sm:text-2xl text-center mb-5 lg:text-2xl xl:text-4xl font-bold text-[#DDFFFA];
+        @apply sm:text-2xl mb-5 lg:text-2xl xl:text-4xl font-bold text-[#DDFFFA];
     }
 
     label {
@@ -31,7 +31,7 @@
     }
 
     button {
-        @apply cursor-pointer bg-[#C5F8FE] text-black rounded-[10px] max-w-full w-[100px] h-10 flex items-center justify-evenly duration-300 ease-in-out hover:shadow-[0px_0px_10px_3px_#67E8F9] hover:bg-[#89e5ef];
+        @apply cursor-pointer bg-[#C5F8FE] text-black rounded-[10px] max-w-full w-full sm:w-[216px] h-10 flex items-center justify-evenly duration-300 ease-in-out hover:shadow-[0px_0px_10px_3px_#67E8F9] hover:bg-[#89e5ef];
     }
 
     p {
@@ -54,15 +54,19 @@
 
 @layer components {
     .Header {
-        @apply flex justify-between px-[10%] py-10;
+        @apply flex justify-between px-2 sm:px-6 md:px-[10%] py-10;
     }
 
     .Banner {
-        @apply flex justify-around h-[300px] mx-[10%] mb-8 bg-gradient-to-b from-[#153230] to-[#08090D] rounded-3xl p-5 hover:ring-2 hover:ring-[#bdfdef] duration-300 ease-in-out;
+        @apply flex flex-col md:flex-row items-center justify-around h-auto md:h-[300px] mx-2 sm:mx-6 md:mx-[10%] w-auto mb-8 bg-gradient-to-b from-[#153230] to-[#08090D] rounded-3xl p-5 hover:ring-2 hover:ring-[#bdfdef] duration-300 ease-in-out;
     }
     
+    .copywriting-img {
+        @apply hidden lg:block;
+    }
+
     .generate-button {
-        @apply w-[316px] h-[40px] font-bold m-auto mb-[20px]
+        @apply w-full sm:w-[316px] h-[40px] font-bold m-auto mb-[20px] sm:text-lg;
     }
 
     .Banner-highlight {
@@ -79,6 +83,10 @@
 
     .saved-text {
         @apply font-light text-[#afecfc] text-[14px]/snug font-sans 
+    }
+
+    .show-or-hide {
+        @apply text-blue-400 cursor-pointer underline;
     }
 }
 
