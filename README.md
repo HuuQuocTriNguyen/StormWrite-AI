@@ -1,17 +1,14 @@
 # StormWrite AI
 
-Have you ever spend 1-3 hours of your day, brainstorming an idea, write the content manually, publish it on X / Twitter but acquire no attention?
+Have you ever spend 1-3 hours of your day, brainstorm an idea, write the content manually, publish it on X / Twitter but acquire no attention?
 
-Or worse, you are tired of writing every piece of content from scratch, although it is one of the most important work in your job.
+Or worse, are you tired of writing every piece of content from scratch, although it is one of the most important work in your job?
 
 Introduce StormWrite AI, an AI-Powered content repurposing tool that can generate your idea into a potentially viral X Tweet with preferred tones.
 
 Here's what StormWrite AI offer:
-    1. Mobile-friendly responsive design
-    2. Generating Viral X Tweet through simple idea input and tone matching
-    3. Save your favorite Tweet and display them in the app.
-    4. Copy your Tweet into clipboard and bring it everywhere.
-    5. Screenshot your Tweet and upload it everywhere.
+    
+Mobile-friendly responsive design, Generating Viral X Tweet through simple idea input and tone matching, Save your favorite Tweet and display them in the app. Copy your Tweet into clipboard and bring it everywhere, Screenshot your Tweet and upload it everywhere.
 
 If you ever wonder about the price that our product offer, worry less, let me get this straight:
 "StormWrite AI is completely FREE"
