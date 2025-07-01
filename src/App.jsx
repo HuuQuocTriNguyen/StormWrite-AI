@@ -31,9 +31,6 @@ const StormWriteAI = () => {
         const response = await ai.models.generateContent({
           model: "gemini-2.5-flash",
           contents: prompt(input, tone),
-          config: {
-            systemInstruction: systemInstructions()
-          }
         });
         
         const result = response.text;
@@ -127,8 +124,8 @@ const StormWriteAI = () => {
                 </div>
               </div>
 
-              <div className='rounded-lg w-full h-[300px] mb-[10px]' ref={outputRef}> 
-                {latestTweet && <pre className='h-[300px] text-[#fafafa] border-transparent text-sm whitespace-pre-wrap overflow-auto'>
+              <div className='rounded-lg w-full h-[590px] mb-[10px]' ref={outputRef}> 
+                {latestTweet && <pre className='h-[570px] text-[#fafafa] border-transparent text-sm whitespace-pre-wrap overflow-auto'>
                   {latestTweet} 
                 </pre>}
               </div>

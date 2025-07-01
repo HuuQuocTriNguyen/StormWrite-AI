@@ -1,12 +1,28 @@
-# React + Vite
+# StormWrite AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Have you ever spend 1-3 hours of your day, brainstorming an idea, write the content manually, publish it on X / Twitter but acquire no attention?
 
-Currently, two official plugins are available:
+Or worse, you are tired of writing every piece of content from scratch, although it is one of the most important work in your job.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Introduce StormWrite AI, an AI-Powered content repurposing tool that can generate your idea into a potentially viral X Tweet with preferred tones.
 
-## Expanding the ESLint configuration
+Here's what StormWrite AI offer:
+    1. Mobile-friendly responsive design
+    2. Generating Viral X Tweet through simple idea input and tone matching
+    3. Save your favorite Tweet and display them in the app.
+    4. Copy your Tweet into clipboard and bring it everywhere.
+    5. Screenshot your Tweet and upload it everywhere.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+If you ever wonder about the price that our product offer, worry less, let me get this straight:
+"StormWrite AI is completely FREE"
+
+Yes, no cost requires for any feature, and you can have access to all of our functionality.
+
+Enjoy!
+
+## Tech-Stack
+
+1. React (v19.1):       UI/UX components, Logics, functionality.
+2. TailwindCSS (v4.1):  Rapid styling & responsive design.
+3. AppWrite:            Database for saving Tweets and displaying them.
+4. Gemini AI API:       The brain of the app, use to generate tweets.
