@@ -3,7 +3,7 @@ import { saveTweets } from '../utils/appwrite';
 
 
 // Save system - Save button saves to Appwrite's DB (Document)
-const Save = ({ savedTweet, savedID, userContent }) => {
+const Save = ({ savedTweet, savedID, userContent, onSave }) => {
   const [saved, setSaved] = useState(false);
   const [savedCount, setSavedCount] = useState(0);
 
@@ -22,6 +22,7 @@ const Save = ({ savedTweet, savedID, userContent }) => {
         setSavedCount(savedCount + 1);
         setSaved(true);
         setTimeout(() => setSaved(false), 1000)
+        onSave();
       } 
       catch (error) {
         console.error("Error saving database: ", error)

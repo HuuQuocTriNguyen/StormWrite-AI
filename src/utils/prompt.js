@@ -11,6 +11,7 @@ export const prompt = (input, tone) => {
         Topic: ${input}
         Style: ${tone}
 
+        Don't add any unnecessary information or filler text, hash tags, or emojis. Make it authentic by the value of each words. Not unnecessary expressions.
         Only output tweet threads. No intro or explanation. Make it concise, meaningful, effective, as if you are writing to buy people's attention and keep them engaged.
     `
 }

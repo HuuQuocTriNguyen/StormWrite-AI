@@ -12,7 +12,7 @@ const Copy = ({ copyText }) => {
     try {
       await navigator.clipboard.writeText(copyText);
       setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
+      setTimeout(() => setCopied(false), 1000);
 
     } catch (error) {
       console.error("Copy failed", error)

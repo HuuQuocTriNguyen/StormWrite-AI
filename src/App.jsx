@@ -22,6 +22,11 @@ const StormWriteAI = () => {
   const latestTweet = storeTweet.length > 0 ? storeTweet[storeTweet.length - 1] : "";
   const outputRef = useRef(); // The center to connect screenshot button and the place to screenshot
 
+  const fetchTweets = async () => {
+    const data = await getSavedTweets();
+    setSavedTweets(data);
+  }
+
   const generateThread = async () => {  
       if (!input || !tone) return alert("Please say something")
       setIsLoading(true);
@@ -46,20 +51,11 @@ const StormWriteAI = () => {
 
   // Fetch Store Tweets and display them.
   useEffect(() => {
-    const fetchTweets = async () => {
-      const data = await getSavedTweets();
-      setSavedTweets(data);
-    }
-
     fetchTweets();
-  }, [])
+  }, []);
 
   const displaySavedTweets = () => {
-    setDisplayTweets((prev) => {
-      const change = !prev;
-      document.getElementById("Save-tweet-block").style.display = change ? "block" : "none";
-      return change;
-    })
+    setDisplayTweets((prev) => !prev);
   }
 
   return (
@@ -100,6 +96,7 @@ const StormWriteAI = () => {
             </button>
           </div>
 
+          {displayTweets && (
           <div id="Save-tweet-block">
             <label>Saved Tweets</label>
             <div className='saved-tweets-display'>
@@ -112,14 +109,15 @@ const StormWriteAI = () => {
               ))}
             </div>
           </div>
-
+          )}
+          
           { isLoading ? <Spinner className='mt-[25px]' /> : errorMessage ? (<p className='text-red-500 text-xl font-semibold font-mona-sans'>{errorMessage}</p>) : (
             <div className='mt-[25px]'>
               <div className='flex justify-between mb-[20px]'>
                 {latestTweet && <label>Write</label>}
                 <div className='flex gap-5'>
                   {latestTweet && <Screenshot targetRef={outputRef} />}
-                  {latestTweet && <Save savedTweet={latestTweet} savedID={Date.now()} userContent={input} />}
+                  {latestTweet && <Save savedTweet={latestTweet} savedID={Date.now()} userContent={input} onSave={fetchTweets} />}
                   {latestTweet && <Copy copyText={latestTweet} />}
                 </div>
               </div>
