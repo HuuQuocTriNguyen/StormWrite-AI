@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useRef, useEffect } from 'react'
 import { GoogleGenAI } from "@google/genai";
-import { prompt, systemInstructions } from './utils/prompt';
+import { prompt } from './utils/prompt';
 import Spinner from './components/Spinner';
 import Screenshot from './components/screenshot';
 import Save from './components/Save';

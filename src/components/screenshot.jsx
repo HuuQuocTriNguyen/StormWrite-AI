@@ -21,7 +21,7 @@ const Screenshot = ({ targetRef }) => {
         link.remove();
 
         setScreenshotTaken(true);
-        setTimeout(() => setScreenshotTaken(false), 1500);
+        setTimeout(() => setScreenshotTaken(false), 1000);
         
       } catch (error) {
         console.error(`Error screenshotting the text: ${error}`)

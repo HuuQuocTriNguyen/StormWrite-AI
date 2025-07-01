@@ -21,7 +21,7 @@ const Save = ({ savedTweet, savedID, userContent }) => {
         await saveTweets(savedID, savedTweet, userContent);
         setSavedCount(savedCount + 1);
         setSaved(true);
-        setTimeout(() => setSaved(false), 1500)
+        setTimeout(() => setSaved(false), 1000)
       } 
       catch (error) {
         console.error("Error saving database: ", error)
